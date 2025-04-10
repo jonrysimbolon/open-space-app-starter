@@ -10,8 +10,8 @@ function talksReducer(talks = [], action = {}) {
       return talks.map((talk) => {
         if (talk.id === action.payload.talkId) {
           return {
-            ...talks,
-            likes: talk.like.includes(action.payload.userId)
+            ...talk, // yang membuat error -> talks
+            likes: talk.likes.includes(action.payload.userId)
               ? talk.likes.filter((id) => id !== action.payload.userId)
               : talk.likes.concat([action.payload.userId]),
           };

@@ -6,11 +6,7 @@ import { asyncAddTalk, asyncToogleLikeTalk } from '../states/talks/action';
 import { useDispatch, useSelector } from 'react-redux';
 
 function HomePage() {
-  const {
-    talks = [],
-    users = [],
-    authUser,
-  } = useSelector((states) => states);
+  const { talks = [], users = [], authUser } = useSelector((states) => states);
 
   const dispatch = useDispatch();
 
@@ -19,12 +15,11 @@ function HomePage() {
   }, [dispatch]);
 
   const onAddTalk = (text) => {
-    // @TODO: dispatch async action to add talk
-
+    dispatch(asyncAddTalk({ text }));
   };
 
   const onLike = (id) => {
-    // @TODO: dispatch async action to toggle like talk
+    dispatch(asyncToogleLikeTalk(id));
   };
 
   const talkList = talks.map((talk) => ({
