@@ -48,7 +48,6 @@ function asyncReceiveTalkDetail(talkId) {
 
 function asyncToogleLikeTalkDetail() {
   return async (dispatch, getState) => {
-    dispatch(showLoading());
     const { authUser, talkDetail } = getState();
     dispatch(toggleLikeTalkDetailActionCreator(authUser.id));
 
@@ -57,7 +56,6 @@ function asyncToogleLikeTalkDetail() {
     } catch (error) {
       alert(error.message);
     }
-    dispatch(hideLoading());
   };
 }
 

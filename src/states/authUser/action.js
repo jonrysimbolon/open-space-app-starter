@@ -43,10 +43,8 @@ function asyncSetAuthUser({ id, password }) {
 
 function asyncUnsetAuthUser() {
   return (dispatch) => {
-    dispatch(showLoading());
     dispatch(unsetAuthUserActionCreator());
     api.putAccessToken('');
-    dispatch(hideLoading());
   };
 }
 

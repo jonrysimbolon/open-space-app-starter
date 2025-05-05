@@ -50,7 +50,6 @@ function asyncAddTalk({ text, replyTo = '' }) {
 
 function asyncToogleLikeTalk(talkId) {
   return async (dispatch, getState) => {
-    dispatch(showLoading());
     const { authUser } = getState();
     dispatch(toggleLikeTalkActionCreator({ talkId, userId: authUser.id }));
 
@@ -60,7 +59,6 @@ function asyncToogleLikeTalk(talkId) {
       alert(error.message);
       dispatch(toggleLikeTalkActionCreator({ talkId, userId: authUser.id }));
     }
-    dispatch(hideLoading());
   };
 }
 
