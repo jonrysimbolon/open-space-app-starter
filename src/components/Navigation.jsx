@@ -9,7 +9,7 @@ function Navigation({ authUser, signOut }) {
     <div className="navigation">
       <img src={photo} alt={id} title={name} />
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/">Home Jon</Link>
       </nav>
       <button type="button" onClick={signOut}>Sign out</button>
     </div>
