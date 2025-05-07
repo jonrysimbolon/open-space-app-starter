@@ -25,7 +25,7 @@ function LoginPage() {
           Through Open Space Jon.
         </h2>
 
-        <LoginInput login={onLogin} />
+        <LoginInput login={onLogin />
         <p>
           Don&apos;t have an account? <Link to="/register">Register</Link>
         </p>
